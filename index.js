@@ -54,13 +54,15 @@ document.onclick=function(e)
 {
   if(e.target.className==="body")
   if (dropZone.classList.contains("dragged"))
-      dropZone.classList.remove("dragged");
+  dropZone.classList.remove("dragged");
 }
 copyURLBtn.addEventListener("click", () => {
   fileURL.select();
   document.execCommand("copy");
   showToast("Link Copied");
 });
+
+var x = window.matchMedia("(max-width: 700px)")
 
 const uploadFile = () => {
   if (fileInput.files.length > 1) {
@@ -104,7 +106,6 @@ const uploadFile = () => {
   
   //   // listen for response which will give the link
   xhr.onreadystatechange = function () {
-    var x = window.matchMedia("(max-width: 700px)")
   if (x.matches) { // If media query matches
     if (xhr.readyState == XMLHttpRequest.DONE)
     {
@@ -144,7 +145,7 @@ const onFileUploadSuccess = (res) => {
 // Email logic
 emailForm.addEventListener("submit", (e) => {
   e.preventDefault(); // stop submission
-
+  
   // disable the button
   emailForm[2].setAttribute("disabled", "true");
   emailForm[2].innerText = "Sending...";
@@ -169,6 +170,9 @@ emailForm.addEventListener("submit", (e) => {
       if (data.success) {
         showToast("Email Sent");
         sharingContainer.style.display = "none"; // hide the box
+        if (x.matches) { // If media query matches
+          document.querySelector(".body").style.height="65vh";
+        }
       }
     });
 });

@@ -281,7 +281,7 @@ body {
     height: 65vh;
   }
   .upload-container{
-    margin-top: 20px;
+    margin: 20px 0px;
   }
   .email-container .filed {
     flex-direction: column;
