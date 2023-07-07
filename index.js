@@ -95,7 +95,16 @@ const uploadFile = () => {
     progressBar.style.transform = scaleX;
   };
 
-  var x = window.matchMedia("(max-width: 700px)")
+
+  // handle error
+  xhr.upload.onerror = function () {
+    showToast(`Error in upload: ${xhr.status}.`);
+    fileInput.value = ""; // reset the input
+  };
+  
+  //   // listen for response which will give the link
+  xhr.onreadystatechange = function () {
+    var x = window.matchMedia("(max-width: 700px)")
   if (x.matches) { // If media query matches
     if (xhr.readyState == XMLHttpRequest.DONE)
     {
@@ -106,15 +115,6 @@ const uploadFile = () => {
       document.querySelector(".body").style.height="65vh";
     }
   }
-
-  // handle error
-  xhr.upload.onerror = function () {
-    showToast(`Error in upload: ${xhr.status}.`);
-    fileInput.value = ""; // reset the input
-  };
-  
-  //   // listen for response which will give the link
-  xhr.onreadystatechange = function () {
     if (xhr.readyState == XMLHttpRequest.DONE) {
       onFileUploadSuccess(xhr.responseText);
       if (dropZone.classList.contains("dragged"))
