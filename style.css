@@ -9,7 +9,7 @@ body {
   font-family: system-ui;
   background: var(--main-bg-color);
   height: 98vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   flex-direction: row-reverse;
   display: flex;
   align-items: center;
@@ -255,6 +255,7 @@ body {
 
 .show.toast {
   transform: translate(50%, -10px);
+  right: 50%;
 }
 
 .image-vector {
@@ -271,6 +272,9 @@ body {
   }
   .image-vector {
     width: 70vw;
+  }
+  .toast {
+    right: 120%;
   }
   body{
     flex-direction: column-reverse;
