@@ -9,7 +9,7 @@ body {
   font-family: system-ui;
   background: var(--main-bg-color);
   height: 98vh;
-  /* overflow: hidden; */
+  overflow: hidden;
   flex-direction: row-reverse;
   display: flex;
   align-items: center;
@@ -279,6 +279,7 @@ body {
   body{
     flex-direction: column-reverse;
     height: 65vh;
+    overflow: scroll;
   }
   .upload-container{
     margin: 20px 0px;
