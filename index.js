@@ -64,7 +64,7 @@ copyURLBtn.addEventListener("click", () => {
 
 const uploadFile = () => {
   if (fileInput.files.length > 1) {
-    showToast("Upload Only 1 File");
+    showToast("Please upload 1 file only");
     fileInput.value = ""; // reset the input
     return;
   }
@@ -95,12 +95,24 @@ const uploadFile = () => {
     progressBar.style.transform = scaleX;
   };
 
+  var x = window.matchMedia("(max-width: 700px)")
+  if (x.matches) { // If media query matches
+    if (xhr.readyState == XMLHttpRequest.DONE)
+    {
+      document.querySelector(".body").style.height="98vh";
+    }
+    else
+    {
+      document.querySelector(".body").style.height="65vh";
+    }
+  }
+
   // handle error
   xhr.upload.onerror = function () {
     showToast(`Error in upload: ${xhr.status}.`);
     fileInput.value = ""; // reset the input
   };
-
+  
   //   // listen for response which will give the link
   xhr.onreadystatechange = function () {
     if (xhr.readyState == XMLHttpRequest.DONE) {
@@ -171,3 +183,4 @@ const showToast = (msg) => {
     toast.classList.remove("show");
   }, 2000);
 };
+

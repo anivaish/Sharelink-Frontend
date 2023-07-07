@@ -143,6 +143,7 @@ body {
 }
 
 /* sharing container style */
+
 .sharing-container {
   margin-bottom: 25px;
   width: var(--container-width);
@@ -184,7 +185,7 @@ body {
   cursor: pointer;
 }
 
-/* gmail css */
+/* Gmail CSS */
 .email-container form {
   border: 2px solid var(--border-color);
   width: 100%;
@@ -241,7 +242,7 @@ body {
   position: absolute;
   bottom: 10px;
   right: 50%;
-  transform: translate(50%, 60px);
+  transform: translate(50%, 100px);
   padding: 10px 20px;
   background: var(--light-blue);
   color: #fff;
@@ -249,7 +250,7 @@ body {
   font-size: 18px;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
     0px 4px 6px -2px rgba(0, 0, 0, 0.05);
-  transition: transform ease-in-out 0.2s;
+  transition: transform ease-in-out 0.5s;
 }
 
 .show.toast {
@@ -259,7 +260,7 @@ body {
 .image-vector {
   width: 50vw;
   height: 50vh;
-  background: url(/undraw_upload.svg) no-repeat center;
+  background: url(./img/undraw_upload.svg) no-repeat center;
   background-size: contain;
 }
 
@@ -275,10 +276,11 @@ body {
     flex-direction: column-reverse;
     height: 65vh;
   }
-  .email-container .filed {
-    flex-direction: column;
+  .upload-container{
+    margin-top: 20px;
   }
   .email-container .filed {
-    width: 300px;
+    flex-direction: column;
+    width: 240px;
   }
 }
