@@ -11,7 +11,7 @@ const fileURL = document.querySelector("#fileURL");
 const emailForm = document.querySelector("#emailForm");
 const toast = document.querySelector(".toast");
 
-const baseURL = "https://sharelink-xxkc.onrender.com";
+const baseURL = "http://localhost:5000";
 const uploadURL = `${baseURL}/api/files`;
 const emailURL = `${baseURL}/api/files/send`;
 
@@ -100,6 +100,9 @@ const uploadFile = () => {
 
   // handle error
   xhr.upload.onerror = function () {
+    if (x.matches) { // If media query matches
+      document.querySelector(".body").style.height="65vh";
+    }
     showToast(`Error in upload: ${xhr.status}.`);
     fileInput.value = ""; // reset the input
   };
@@ -109,7 +112,7 @@ const uploadFile = () => {
   if (x.matches) { // If media query matches
     if (xhr.readyState == XMLHttpRequest.DONE)
     {
-      document.querySelector(".body").style.height="98vh";
+      document.querySelector(".body").style.height="93vh";
     }
     else
     {
