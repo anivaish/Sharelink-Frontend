@@ -11,7 +11,7 @@ const fileURL = document.querySelector("#fileURL");
 const emailForm = document.querySelector("#emailForm");
 const toast = document.querySelector(".toast");
 
-const baseURL = "http://localhost:5000";
+const baseURL = "https://sharelink-xxkc.onrender.com";
 const uploadURL = `${baseURL}/api/files`;
 const emailURL = `${baseURL}/api/files/send`;
 
