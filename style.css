@@ -345,7 +345,7 @@ body {
   }
 
   .show.toast {
-    transform: translate(50%, -80px);
+    transform: translate(50%, 0px);
     right: 50%;
   }
 }
