@@ -113,10 +113,12 @@ const uploadFile = () => {
     if (xhr.readyState == XMLHttpRequest.DONE)
     {
       document.querySelector(".body").style.height="93vh";
+      document.querySelector(".image-vector").style.display="none";
     }
     else
     {
       document.querySelector(".body").style.height="65vh";
+      document.querySelector(".image-vector").style.display="block";
     }
   }
     if (xhr.readyState == XMLHttpRequest.DONE) {
@@ -175,6 +177,7 @@ emailForm.addEventListener("submit", (e) => {
         sharingContainer.style.display = "none"; // hide the box
         if (x.matches) { // If media query matches
           document.querySelector(".body").style.height="65vh";
+          document.querySelector(".image-vector").style.display="block";
         }
       }
     });
