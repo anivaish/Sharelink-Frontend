@@ -112,7 +112,7 @@ const uploadFile = () => {
   if (x.matches) { // If media query matches
     if (xhr.readyState == XMLHttpRequest.DONE)
     {
-      document.querySelector(".body").style.height="93vh";
+      document.querySelector(".body").style.height="114vh";
       document.querySelector(".image-vector").style.display="none";
     }
     else
